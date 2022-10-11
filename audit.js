@@ -1,4 +1,3 @@
-// get each task for the project
 const fs = require('fs');
 const sdk = require('api')('@scale-ai/v1.1#xj1m535l8xk48lb');
 
@@ -50,10 +49,8 @@ audit = async(projectName) => {
             let annotationsPromises = annotations.map((annotation, idx) => {
                 return new Promise(async (resolve, reject) => {
                     let croppedImagePath = await getCroppedImage(originalImagePath, annotation, `./output/${projectName}/${taskId}/cropped/${idx}.jpg`);
-                    // console.log(croppedImagePath);
         
                     let convolutedImagePath = await processImage(croppedImagePath, `./output/${projectName}/${taskId}/convoluted/${idx}.jpg`)
-                    // console.log(convolutedImagePath);
         
                     let score = await getScore(convolutedImagePath, edgeThreshold);
         
@@ -90,7 +87,7 @@ audit = async(projectName) => {
 
     Promise.all(tasksPromises)
         .then(results => {
-            console.log(warnings);
+            // console.log(warnings);
             fs.writeFileSync(`./output/${projectName}/warnings.json`, JSON.stringify(warnings));
         })
 }

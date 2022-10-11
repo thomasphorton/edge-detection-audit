@@ -12,8 +12,64 @@ At a high level, it:
     * scores the image for "edge percentage" and flags low scores for review
 
 ## Examples
+Using the following image:
 ![original image](/examples/output/original.jpg)
 
+### High Score, No Warning
+```
+{
+    "label":"policy_sign",
+    "attributes":{
+        "occlusion":"0%",
+        "truncation":"0%",
+        "background_color":"white"
+    },
+    "uuid":"fdae05b8-a506-4a8f-9e5b-44006f24b1f7",
+    "width":54,
+    "height":72,
+    "geometry":"box",
+    "left":1439,
+    "top":627
+},
+```
+
+1. Resulting Cropped Image
+![Cropped Image](/examples/output/cropped/1.jpg)
+
+2. Resulting Processed Image
+![Processed Image](/examples/output/convoluted/1.jpg)
+
+3. Edge Detection Score: **45.12%**
+
+
+### Low Score (Mark for review)
+```
+{
+    "label":"traffic_control_sign",
+    "attributes":{
+        "occlusion":"0%",
+        "truncation":"0%",
+        "background_color":"red"
+    },
+    "uuid":"da493933-bb23-4179-a3ce-16c2b8b14d8c",
+    "width":29,
+    "height":41,
+    "geometry":"box",
+    "left":374,
+    "top":589
+},
+```
+
+1. Resulting Cropped Image
+![Cropped Image](/examples/output/cropped/3.jpg)
+
+2. Resulting Processed Image
+![Processed Image](/examples/output/convoluted/3.jpg)
+
+3. Edge Detection Score: **2.90%**
+
+
+## Audit outputs
 Images for each step of the pipeline are saved to `/output/${projectName}/` for review
 
 Project-level warning files are generated at `/output/${projectName}/warnings.json`
