@@ -12,7 +12,7 @@ At a high level, it:
     * scores the image for "edge percentage" and flags low scores for review
 
 ## Examples
-![original image](/examples/output/images/original.jpg)
+![original image](/examples/output/original.jpg)
 
 Images for each step of the pipeline are saved to `/output/${projectName}/` for review
 
