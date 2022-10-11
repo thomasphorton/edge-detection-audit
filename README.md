@@ -15,6 +15,21 @@ Images for each step of the pipeline are saved to `/output/${projectName}/` for 
 
 Project-level warning files are generated at `/output/${projectName}/warnings.json`
 
+## Using this audit
+Clone the repository
+Install dependencies with `npm i`
+Copy `api-keys.json.example` and update it with your live/test api keys
+Update `projectName` and detection thresholds in `audit.js`
+Run  `npm audit` in the console
+
+## Future development
+* Parameterize projectName and detection thresholds
+* read detection thresholds from config file
+* write tests
+* cache images (don't download if the same image hash already exists)
+* port to AWS step function/lambda functions for better parallelization
+* save scores to database
+* create frontend with audit scores/warnings/histograms
 
 ## other audit ideas/scratchpad
 warning: small bounding box
