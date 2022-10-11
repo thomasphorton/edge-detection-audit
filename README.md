@@ -75,11 +75,11 @@ Images for each step of the pipeline are saved to `/output/${projectName}/` for 
 Project-level warning files are generated at `/output/${projectName}/warnings.json`
 
 ## Using this audit
-Clone the repository
-Install dependencies with `npm i`
-Copy `api-keys.json.example` and update it with your live/test api keys
-Update `projectName` and detection thresholds in `audit.js`
-Run  `npm audit` in the console
+1. Clone the repository
+2. Install dependencies with `npm i`
+3. Copy `api-keys.json.example` and update it with your live/test api keys
+4. Update `projectName` and detection thresholds in `audit.js`
+5. Run  `npm audit` in the console
 
 ## Future development
 * Parameterize projectName and detection thresholds
